@@ -181,18 +181,8 @@ editor.setCode = function() {
 }
 
 editor.setFontType = function(font) {
-    window.getSelection().selectAllChildren(editor.editor);
-    var sel = window.getSelection();
-    if (sel.rangeCount) {
-        // Creates a new element, and insert the selected text with the chosen font inside
-        var e = document.createElement('span');
-        e.style.fontFamily = font;
-        e.innerHTML = sel.toString();
-        var range = sel.getRangeAt(0);
-        range.deleteContents(); // Deletes selected text…
-        range.insertNode(e); // … and inserts the new element at its place
-        sel.removeAllRanges();
-  }
+    editor.editor.style.fontFamily = font
+
 }
 editor.insertImage = function(url, alt) {
     var html = '<img style="width:100%;max-width:400px" src="' + url + '" alt="' + alt + '" />';

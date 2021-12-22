@@ -152,6 +152,12 @@ class MainActivity : AppCompatActivity() {
 
         insert_code.setOnClickListener{ wysiwygEditor.setCode() }
 
+        btn_set_arial.setOnClickListener {
+            wysiwygEditor.setFontType("Arial")
+        }
+        btn_set_times.setOnClickListener {
+            wysiwygEditor.setFontType("Times New Roman")
+        }
         action_change_font_type.setOnClickListener { wysiwygEditor.setFontType("Times New Roman") }
 
     }
